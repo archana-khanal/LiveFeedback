@@ -1,5 +1,8 @@
 const io = require('socket.io')();
 const uuidv1 = require('uuid/v1');
+var ip = require('ip');
+
+console.log('Running a server on', ip.address());
 
 let feedbackList = []
 

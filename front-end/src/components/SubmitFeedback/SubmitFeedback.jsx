@@ -23,7 +23,9 @@ export class SubmitFeedback extends Component {
     handleSubmit(e) {
         e.preventDefault();
         submitFeedback(this.state.message);
-        console.log(this.state.message);
+        this.setState({
+            message: ''
+        })
     }
 
     render() {  

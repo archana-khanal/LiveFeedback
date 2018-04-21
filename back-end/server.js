@@ -1,9 +1,9 @@
 const io = require('socket.io')();
+const uuidv1 = require('uuid/v1');
 
 let feedbackList = []
-let count = 0;
 
-io.on('connection', (client) => {
+io.sockets.on('connection', (client) => {
     client.on('subscribeToTimer', (interval) => {
         console.log('client is subscribing to timer with interval ', interval);
         setInterval(() => {
@@ -12,18 +12,15 @@ io.on('connection', (client) => {
     });
 
     client.on('submitFeedback', (feedback) => {
-      feedback.id = count;
-      count++;
+      feedback.id = uuidv1();
       feedbackList.push(feedback);
-      console.log('Pushed: ', feedbackList);
     });
 
     client.on('subscribeToFeedback', (interval) => {
       console.log('client is subscribing to feedback with interval ', interval);
       setInterval(() => {
         if (feedbackList && feedbackList.length > 0) {
-          console.log('Sending feedback list: ', JSON.stringify(feedbackList));
-          client.emit('feedback', JSON.stringify(feedbackList));
+          io.emit('feedback', JSON.stringify(feedbackList));
           feedbackList.splice(0, feedbackList.length);
         }
       }, interval);

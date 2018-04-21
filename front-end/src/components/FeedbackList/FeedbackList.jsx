@@ -14,7 +14,7 @@ export class FeedbackList extends Component {
 
     componentDidMount() {
         subcribeToSubmittedFeedback((err, feedbackList) => {
-            let updatedFeedbackList = feedbackList.concat(this.state.feedbackList);
+            let updatedFeedbackList = this.state.feedbackList.concat(feedbackList);
             console.log('Updated feedback list:', updatedFeedbackList);
             this.setState({ 
                 feedbackList: updatedFeedbackList

@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { subscribeToTimer } from './api';
+
 import { FeedbackList } from './components/FeedbackList/FeedbackList';
 import { SubmitFeedback } from './components/SubmitFeedback/SubmitFeedback';
+import { Navbar } from './components/Navbar/Navbar';
+
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    subscribeToTimer((err, timestamp) => this.setState({ 
-      timestamp 
-    }));
-    this.state = {
-      timestamp: 'no timestamp yet'
-    };
-  }
-  
   render() {
     return (
-      <div className="App">
-        This is the timer value: {this.state.timestamp}
-        <SubmitFeedback/>
-        <FeedbackList/>
-      </div>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <Switch>
+            <Route exact path='/' component={FeedbackList}/>
+            <Route exact path='/submit' component={SubmitFeedback}/>
+          </Switch>
+        </div>
+      </BrowserRouter>
     );
   }
 }

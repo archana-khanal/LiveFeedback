@@ -15,7 +15,6 @@ export class FeedbackList extends Component {
     componentDidMount() {
         subcribeToSubmittedFeedback((err, feedbackList) => {
             let updatedFeedbackList = this.state.feedbackList.concat(feedbackList);
-            console.log('Updated feedback list:', updatedFeedbackList);
             this.setState({ 
                 feedbackList: updatedFeedbackList
             })
@@ -34,7 +33,7 @@ export class FeedbackList extends Component {
                             {this.renderFeedback(this.state.feedbackList)}
                         </div> 
                     ) : 
-                ( <div> No Feedback </div> )
+                ( <div> Waiting for feedback... </div> )
                 }
             </div>
         );

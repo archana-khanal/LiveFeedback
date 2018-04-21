@@ -29,11 +29,14 @@ export class FeedbackList extends Component {
             <div>
                 {
                     hasFeedback ? (
-                        <div className="available-feedback">
-                            {this.renderFeedback(this.state.feedbackList)}
-                        </div> 
+                        <div>
+                            <div className="title-text"> All Feedback </div>
+                            <div className="available-feedback">
+                                {this.renderFeedback(this.state.feedbackList)}
+                            </div> 
+                        </div>
                     ) : 
-                ( <div> Waiting for feedback... </div> )
+                ( <div className="title-text"> Waiting for feedback... </div> )
                 }
             </div>
         );

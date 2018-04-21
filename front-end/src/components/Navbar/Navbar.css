@@ -1,15 +1,14 @@
 .navbar {
   background: linear-gradient(to right, rgb(255, 120, 62), rgb(255, 184, 30));
-  margin-bottom: 30px; 
 }
-  .navbar .navbar-brand {
-    color: rgb(0, 0, 0); 
-  }
-  .navbar .navbar-nav .nav-item {
-    text-decoration: none;
-    color: rgb(0, 0, 0); 
-  }
-  .navbar .navbar-nav .active, .navbar .navbar-nav .active:hover, .navbar .navbar-nav .active:focus {
-    text-decoration: none;
-    color: rgb(0, 0, 0); 
-  }
+.navbar .navbar-brand {
+  color: rgb(0, 0, 0); 
+}
+.navbar .navbar-nav .nav-item {
+  text-decoration: none;
+  color: rgb(0, 0, 0); 
+}
+.navbar .navbar-nav .active, .navbar .navbar-nav .active:hover, .navbar .navbar-nav .active:focus {
+  text-decoration: none;
+  color: rgb(0, 0, 0); 
+}

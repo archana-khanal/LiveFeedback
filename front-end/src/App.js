@@ -15,7 +15,7 @@ class App extends Component {
           <Navbar />
           <Switch>
             <Route exact path='/' component={FeedbackList}/>
-            <Route exact path='/submit' component={SubmitFeedback}/>
+            <Route path='/submit' component={SubmitFeedback}/>
           </Switch>
         </div>
       </BrowserRouter>

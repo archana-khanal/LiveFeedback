@@ -30,7 +30,7 @@ export class SubmitFeedback extends Component {
 
     render() {  
         return (
-            <div>
+            <div className="container">
                 <div className="title-text">Submit Feedback</div>
                 <form onSubmit={this.handleSubmit}>
                     <textarea type="text" rows='3' value={this.state.message} onChange={this.handleChange} />

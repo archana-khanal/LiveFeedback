@@ -32,10 +32,17 @@ export class SubmitFeedback extends Component {
         return (
             <div className="container">
                 <div className="title-text">Submit Feedback</div>
-                <form onSubmit={this.handleSubmit}>
-                    <textarea type="text" rows='3' value={this.state.message} onChange={this.handleChange} />
-                    <button type="submit" value="Submit" />
-                </form>
+                <div className="row justify-content-center">
+                    <div className="col-9">
+                        <form onSubmit={this.handleSubmit}>
+                            <div className="form-group">
+                                <textarea className="form-control" type="text" rows='3' value={this.state.message} onChange={this.handleChange} />
+                                <small class="form-text text-muted">Your feedback will be submitted anonymously</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         );
     }

@@ -7,11 +7,9 @@
 }
 .navbar .navbar-nav .nav-item {
   text-decoration: none;
-  font-weight: 600;
   color: white;
+  padding-left: 10px;
 }
 .navbar .navbar-nav .active, .navbar .navbar-nav .active:hover, .navbar .navbar-nav .active:focus {
   text-decoration: none;
-  font-weight: 600;
-  color: white;
 }

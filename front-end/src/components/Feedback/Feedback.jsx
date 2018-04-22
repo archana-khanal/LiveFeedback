@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Feedback.css';
 
 export class Feedback extends Component {
 
@@ -18,7 +19,7 @@ export class Feedback extends Component {
 
     render() {
         return (
-            <div className="feedback-box">
+            <div className="col-md-3 col-sm-4 feedback-box">
                 {this.state.message}
             </div>
         );

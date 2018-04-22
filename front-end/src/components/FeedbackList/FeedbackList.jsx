@@ -29,9 +29,9 @@ export class FeedbackList extends Component {
             <div>
                 {
                     hasFeedback ? (
-                        <div>
+                        <div className="container">
                             <div className="title-text"> All Feedback </div>
-                            <div className="available-feedback">
+                            <div className="row justify-content-around">
                                 {this.renderFeedback(this.state.feedbackList)}
                             </div> 
                         </div>

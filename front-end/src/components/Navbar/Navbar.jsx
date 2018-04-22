@@ -5,7 +5,7 @@ import './Navbar.css';
 export class Navbar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-expand-lg">
+            <nav className="navbar navbar-expand">
                 <NavLink exact to={'/'} className="navbar-brand">LiveFeedback</NavLink>
                 <div>
                     <ul className="navbar-nav">

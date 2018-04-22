@@ -10,7 +10,10 @@ export class Navbar extends Component {
                 <div>
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <NavLink exact to={'/submit'} className="nav-item" activeClassName="active">Give</NavLink>
+                            <NavLink exact to={'/'} className="nav-item" activeClassName="active">View</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink to={'/submit'} className="nav-item" activeClassName="active">Give</NavLink>
                         </li>
                     </ul>
                 </div>

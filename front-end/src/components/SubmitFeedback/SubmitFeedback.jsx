@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { submitFeedback } from '../../api';
+import './SubmitFeedback.css';
 
 export class SubmitFeedback extends Component {
 

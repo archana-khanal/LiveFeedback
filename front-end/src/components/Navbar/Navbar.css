@@ -2,13 +2,16 @@
   background: linear-gradient(to right, rgb(255, 120, 62), rgb(255, 184, 30));
 }
 .navbar .navbar-brand {
-  color: rgb(0, 0, 0); 
+  color: white;
+  font-weight: 600;
 }
 .navbar .navbar-nav .nav-item {
   text-decoration: none;
-  color: rgb(0, 0, 0); 
+  font-weight: 600;
+  color: white;
 }
 .navbar .navbar-nav .active, .navbar .navbar-nav .active:hover, .navbar .navbar-nav .active:focus {
   text-decoration: none;
-  color: rgb(0, 0, 0); 
+  font-weight: 600;
+  color: white;
 }

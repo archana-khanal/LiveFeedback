@@ -8,25 +8,44 @@ export class SubmitFeedback extends Component {
         super(props);
 
         this.state = {
-            message: ''
+            pos: '',
+            neg: ''
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangePos = this.handleChangePos.bind(this);
+        this.handleChangeNeg = this.handleChangeNeg.bind(this);
     }
 
-    handleChange(e) {
+    handleChangePos(e) {
         this.setState({
-            message: e.target.value
+            pos: e.target.value
+        })
+    }
+
+    handleChangeNeg(e) {
+        this.setState({
+            neg: e.target.value
         })
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        submitFeedback(this.state.message);
-        this.setState({
-            message: ''
-        })
+        let message = '';
+        if (this.state.pos.trim().length > 0) {
+            message += `Went well: ${this.state.pos}`;
+        }
+        if (this.state.neg.trim().length > 0) {
+            message += ` Could be better: ${this.state.neg}`;
+        }  
+        message = message.trim();
+        if (message !== '') {
+            submitFeedback(message);
+            this.setState({
+                pos: '',
+                neg: ''
+            })
+        }
     }
 
     render() {  
@@ -37,7 +56,13 @@ export class SubmitFeedback extends Component {
                     <div className="col-9">
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-group">
-                                <textarea className="form-control" type="text" rows='3' value={this.state.message} onChange={this.handleChange} />
+                                <label>What went well?</label>
+                                <textarea className="form-control" type="text" rows='3' value={this.state.pos} onChange={this.handleChangePos} />
+                                <small class="form-text text-muted">Your feedback will be submitted anonymously</small>
+                            </div>
+                            <div className="form-group">
+                                <label>What could be better?</label>
+                                <textarea className="form-control" type="text" rows='3' value={this.state.neg} onChange={this.handleChangeNeg} />
                                 <small class="form-text text-muted">Your feedback will be submitted anonymously</small>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>

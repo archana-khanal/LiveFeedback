@@ -3,5 +3,6 @@
     padding: 10px;
     background: rgb(220, 220, 220);
     color: #333333;
-    border-radius: 10px;
+    border-radius: 5px;
+    max-height: fit-content;
 }
